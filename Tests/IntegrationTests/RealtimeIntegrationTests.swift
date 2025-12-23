@@ -18,7 +18,7 @@
   @testable import Realtime
 
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  final class RealtimeIntegrationTests: XCTestCase {
+  final class RealtimeIntegrationTests: IntegrationTestCase {
     let testClock = TestClock<Duration>()
 
     var client: SupabaseClient!
@@ -26,11 +26,6 @@
 
     override func setUp() async throws {
       try await super.setUp()
-
-      //      try XCTSkipUnless(
-      //        ProcessInfo.processInfo.environment["INTEGRATION_TESTS"] != nil,
-      //        "INTEGRATION_TESTS not defined. Set this environment variable to run integration tests."
-      //      )
 
       _clock = testClock
 
