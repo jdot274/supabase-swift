@@ -50,7 +50,7 @@ xcodebuild: warm-simulator
 
 test-integration:
 	cd Tests/IntegrationTests && supabase start && supabase db reset
-	swift test --filter IntegrationTests
+	RUN_INTEGRATION_TESTS=1 swift test --filter IntegrationTests
 	cd Tests/IntegrationTests && supabase stop
 
 build-for-library-evolution:
