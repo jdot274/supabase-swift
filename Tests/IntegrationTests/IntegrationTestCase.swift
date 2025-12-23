@@ -1,13 +1,15 @@
 import Foundation
 import XCTest
 
-class IntegrationTestCase: XCTestCase {
-  override func setUp() async throws {
+open class IntegrationTestCase: XCTestCase {
+  static let integrationFlag = "INTEGRATION_TESTS"
+
+  override open func setUp() async throws {
     try await super.setUp()
 
     try XCTSkipUnless(
-      ProcessInfo.processInfo.environment["INTEGRATION_TESTS"] != nil,
-      "INTEGRATION_TESTS not defined. Set this environment variable to run integration tests."
+      ProcessInfo.processInfo.environment[Self.integrationFlag] != nil,
+      "\(Self.integrationFlag) not defined. Set this environment variable to run integration tests."
     )
   }
 }
