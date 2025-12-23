@@ -271,14 +271,14 @@ Dependencies are managed in `Package.swift`. Use version ranges when possible to
 
 ### Working with Integration Tests
 
-Integration tests require a local Supabase instance:
+Integration tests require a local Supabase instance and are skipped unless `RUN_INTEGRATION_TESTS=1` is set:
 
 ```bash
 cd Tests/IntegrationTests
 supabase start
 supabase db reset
 cd ../..
-swift test --filter IntegrationTests
+RUN_INTEGRATION_TESTS=1 swift test --filter IntegrationTests
 cd Tests/IntegrationTests
 supabase stop
 ```

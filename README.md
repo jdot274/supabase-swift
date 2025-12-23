@@ -107,6 +107,10 @@ For macOS, the named yearly releases are treated as major versions for this poli
 - Push your work back up to your fork
 - Submit a Pull request so that we can review your changes and merge
 
+### Testing
+
+Run the unit test suite with `swift test`. Integration tests require the local Supabase stack and are skipped by default; use `make test-integration` (sets `RUN_INTEGRATION_TESTS=1` for you) to start Supabase and run them.
+
 ## Sponsors
 
 We are building the features of Firebase using enterprise-grade, open source products. We support existing communities wherever possible, and if the products don’t exist we build them and open source them ourselves. Thanks to these sponsors who are making the OSS ecosystem better for everyone.

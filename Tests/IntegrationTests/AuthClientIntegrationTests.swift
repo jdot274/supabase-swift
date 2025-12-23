@@ -17,7 +17,7 @@ import XCTest
   import FoundationNetworking
 #endif
 
-final class AuthClientIntegrationTests: XCTestCase {
+final class AuthClientIntegrationTests: IntegrationTestCase {
   let authClient = makeClient()
 
   static func makeClient(serviceRole: Bool = false) -> AuthClient {

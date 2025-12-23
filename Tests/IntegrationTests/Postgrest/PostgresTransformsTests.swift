@@ -9,7 +9,7 @@ import InlineSnapshotTesting
 import PostgREST
 import XCTest
 
-final class PostgrestTransformsTests: XCTestCase {
+final class PostgrestTransformsTests: IntegrationTestCase {
   let client = PostgrestClient(
     configuration: PostgrestClient.Configuration(
       url: URL(string: "\(DotEnv.SUPABASE_URL)/rest/v1")!,
