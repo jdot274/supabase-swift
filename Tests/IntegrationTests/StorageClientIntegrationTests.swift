@@ -9,7 +9,7 @@ import InlineSnapshotTesting
 import Storage
 import XCTest
 
-final class StorageClientIntegrationTests: XCTestCase {
+final class StorageClientIntegrationTests: IntegrationTestCase {
   let storage = SupabaseStorageClient(
     configuration: StorageClientConfiguration(
       url: URL(string: "\(DotEnv.SUPABASE_URL)/storage/v1")!,
